@@ -10,7 +10,7 @@ Clone this repository or download the source code. Navigate to the project direc
 
 ```bash
 npm install
-
+```
 
 ## Usage
 
