@@ -1,20 +1,20 @@
-const { BouncelessOne, BouncelessBulk } = require('./bouncelessAPI');
+const { bulkemailverifierOne, bulkemailverifierBulk } = require('./bulkemailverifierAPI');
 
 const verifySingleEmail = async () => {
-  const bouncelessOne = new BouncelessOne('YOUR_KEY', 'test@email.com');
-  const response = await bouncelessOne.control();
+  const bulkemailverifierOne = new bulkemailverifierOne('YOUR_KEY', 'test@email.com');
+  const response = await bulkemailverifierOne.control();
   console.log(response);
 };
 
 const verifyBulkEmails = async () => {
-  const bouncelessBulk = new BouncelessBulk('YOUR_KEY', 'path/to/file.csv');
-  const response = await bouncelessBulk.upload();
+  const bulkemailverifierBulk = new bulkemailverifierBulk('YOUR_KEY', 'path/to/file.csv');
+  const response = await bulkemailverifierBulk.upload();
   console.log(response);
 };
 
 const getBulkInfo = async () => {
-  const bouncelessBulk = new BouncelessBulk('YOUR_KEY', 'FILE_ID');
-  const response = await bouncelessBulk.get_info();
+  const bulkemailverifierBulk = new bulkemailverifierBulk('YOUR_KEY', 'FILE_ID');
+  const response = await bulkemailverifierBulk.get_info();
   console.log(response);
 };
 

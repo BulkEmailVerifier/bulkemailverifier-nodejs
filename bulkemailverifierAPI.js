@@ -2,11 +2,11 @@ const axios = require('axios');
 const fs = require('fs');
 const FormData = require('form-data');
 
-class BouncelessOne {
+class bulkemailverifierOne {
   constructor(key, email) {
     this.key = key;
     this.email = email;
-    this.url = `https://apps.bounceless.io/api/singlemaildetails?secret=${this.key}&email=${this.email}`;
+    this.url = `https://client.bulkemailverifier.com/api/singlemaildetails?secret=${this.key}&email=${this.email}`;
   }
 
   async control() {
@@ -19,11 +19,11 @@ class BouncelessOne {
   }
 }
 
-class BouncelessBulk {
+class bulkemailverifierBulk {
   constructor(key, user_file) {
     this.key = key;
     this.user_file = user_file;
-    this.url = `https://apps.bounceless.io/api/verifyApiFile?secret=${this.key}`;
+    this.url = `https://client.bulkemailverifier.com/api/verifyApiFile?secret=${this.key}`;
   }
 
   async upload() {
@@ -41,7 +41,7 @@ class BouncelessBulk {
 
   async get_info(id) {
     try {
-      const url = `https://apps.bounceless.io/api/getApiFileInfo?secret=${this.key}&id=${id}`;
+      const url = `https://client.bulkemailverifier.com/api/getApiFileInfo?secret=${this.key}&id=${id}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -50,4 +50,4 @@ class BouncelessBulk {
   }
 }
 
-module.exports = { BouncelessOne, BouncelessBulk };
+module.exports = { bulkemailverifierOne, bulkemailverifierBulk };
